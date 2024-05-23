@@ -1,0 +1,39 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.yunmo.drone.inspection.apirpc.task.service";
+option java_outer_classname = "ArithmeticProto";
+option objc_class_prefix = "RTG";
+
+service ArithmeticService {
+  rpc analysis(TaskAssets) returns (stream TaskAssetResponse) {}
+}
+
+message TaskAssets {
+  repeated TaskAsset task_asset = 1;
+}
+
+message TaskAsset{
+  int64 id = 1;
+  string location = 2;
+  string device_name = 3;
+  //IMAGE,VIDEO
+  string type = 4;
+}
+
+message TaskAssetResponse{
+  int64 id = 1;
+  repeated LocationWrap location_wrap = 2;
+  map<string,string> attributes = 3;
+}
+
+message LocationWrap{
+  string location = 1;
+  AnalysisType type = 2;
+}
+
+enum AnalysisType{
+  //原始图片
+  ORIGINAL = 0;
+  //分析后的图片
+  ANALYSIS = 1;
+}

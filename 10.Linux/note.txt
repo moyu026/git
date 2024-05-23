@@ -1,0 +1,117 @@
+1.first root:sudo passwd root
+  root: su
+  root: yunmo
+重启：sudo reboot
+2.delete file:  sudo rm -r file_name
+	sudo rm -f folder_name
+
+3.activate conda:  source ~/.bashrc
+  create new env:  conda create --name py38 python=3.8
+  activate new env:  conda activate user_environment
+  exit conda env:    conda deactivate
+查看conda虚拟环境：conda env list
+删除conda虚拟环境：conda env remove --name py38
+
+conda 安装cuda：conda install -c "nvidia/label/cuda-11.7.0" cuda-toolkit
+          安装cudnn: 1.conda search cudnn -c conda-forge
+	            2.conda install cudnn==8.4.0.27 -c conda-forge
+	Linux中可能需要添加环境变量：vim ~/.bashrc
+			export PATH=/home/yuzhenchen/anaconda3/envs/qwen/lib/:$PATH （虚拟环境的lib路径）
+
+
+docker:
+	创建dockers：sudo docker run --name=liu --gpus all -t -p 8888:8888 -v /home/dir:/workspace nvcr.io/nvidia/pytorch:23.03-py3
+	启用docker:  docker start 容器ID或容器名
+	进入docker： docker attach 容器ID或容器名
+		     sudo docker exec -it test /bin/bash
+	停止docker：docker stop 容器ID或容器名
+	删除docker：docker rm 容器ID或容器名
+	复制服务器中文件到docker：docker cp 本地路径 容器ID或容器名:docker路径 
+	复制docker文件到服务器中：docker cp  容器ID或容器名:docker路径  本地路径
+	把docker保存为镜像：docker commit -a 'author' -m 'instruction' test image_test（test:docker名，image_test:保存的镜像名）
+	删除镜像：docker rmi [image]
+
+sudo docker tag grpc_test:latest harbor.yunmotec.com:10000/drone-inspection/grpc_test:v0.0.1
+sudo docker push harbor.yunmotec.com:10000/drone-inspection/grpc_test:v0.0.1
+admin Yunmotec!1
+
+上传GitHub：
+	git init
+	git add .
+	git commit -m “你的提交信息”
+	git push
+  
+  enter virtual env: source activate python38
+  exit virtual env: conda deactivate
+
+2.file permission
+	sudo chmod -R 777 tensorrt_test
+
+2.check cuda version: cat /usr/loycal/cuda/version.txt
+  check system information: jetson_release -v
+  check driver version: head -n 1 /etc/nv_tegra_release
+
+3.clash: ./clash.0 -d .
+	http://clash.razord.top/#/proxies
+
+3.pip install torch-1.11.0-cp38-cp38-linux_aarch64.whl -i http://pypi.mirrors.ustc.edu.cn/simple
+
+	pip install openvino -i https://pypi.tuna.tsinghua.edu.cn/simple/
+
+	pip install ninja -i https://pypi.douban.com/simple
+	pip install -i http://pypi.hustunique.com/simple 
+	pip install ISR -i http://pypi.sdutlinux.org/simple 
+	pip install -i http://pypi.mirrors.ustc.edu.cn/simple 
+
+4.change mirror(need arm mirror, not x86!!!!)
+把阿里源or清华源的url里的ubuntu全部替换成ubuntu-ports，然后重新apt-get update
+	backup:    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+	open list: sudo gedit /etc/apt/sources.list
+	rewrite 
+	update:    sudo apt-get update
+
+5.  Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate.  Could not handshake: Error in the certificate verification. [IP: 101.6.15.130 443]
+	solved: 更改源文件，将所有的https改成http
+
+dpkg -i xxx.deb
+
+6.install jtop:  sudo -H pip install -U jetson-stats
+     use: jtop
+
+
+tensorboard --logdir=F:\PythonWork\1.detection\2.ultralytics-main\runs\segment\train6
+
+
+ssh liudengjin@192.168.102.152
+/mnt/disk2/workspace/liudengjin
+nvidia-smi
+watch -n 1 -d nvidia-smi
+
+
+ssh yuzhenchen@192.168.102.68  yuzhenchen  yuzhenchen
+
+CUDA_VISIBLE_DEVICES=1 python train.py
+
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. arithmetic.proto
+
+pip install  selenium -i https://pypi.tuna.tsinghua.edu.cn/simple/
+sudo pip3 install opencv-contrib-python  -i https://pypi.tuna.tsinghua.edu.cn/simple/
+
+docker commit  test grpc_test
+sudo docker exec -it grpc_test /bin/bash
+admin Yunmotec!1
+apt-get install net-tools
+
+编译镜像：sudo docker build -t grpc-test:v0.0.1 .
+创建dockers：sudo docker run --name=grpc_test --gpus all -t  grpc-test:v0.0.1
+修改tag: docker tag grpc-test:v0.0.3 harbor.yunmotec.com:10000/drone-inspection/grpc-test:v0.0.1
+上传dockers：docker push harbor.yunmotec.com:10000/drone-inspection/grpc-test:v0.0.1
+
+sudo docker run --name=grpc_cv --gpus all -t   borda/docker_python-opencv-ffmpeg:gpu-py3.9-cv4.9.0
+
+
+pip install modelscope -i https://pypi.tuna.tsinghua.edu.cn/simple/
+
+
+
+

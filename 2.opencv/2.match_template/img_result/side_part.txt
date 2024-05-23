@@ -1,0 +1,4 @@
+{'1-pts.png': 1.0}
+indx_name1-pts.png,1.0
+('1-pts.png', 1.0)
+

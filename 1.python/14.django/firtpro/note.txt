@@ -1,0 +1,17 @@
+创建项目: django-admin startproject pro(项目名)
+
+创建app: python manage.py startapp app1
+
+    在settings.py里注册app
+    在url.py里添加地址和对应的函数
+    在view.py里定义添加的函数
+    html文件新建在templates文件夹中
+    静态文件放在static文件夹中，在static文件中新建文件夹css,img,js,plugins
+
+启动django项目: python manage.py runserver
+
+django连接数据库，在setting.py文件中配置和修改,在models.py文件中创建类
+创建表:
+    python manage.py makemigrations
+    python manage.py migrate
+

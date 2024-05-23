@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package test;
+
+service Bilili {                               // Bilili: 服务名
+    rpc Hello(HelloReq) returns (HelloReply){} // rpc:定义服务中的函数, hello:函数名
+    rpc HelloTest(stream HelloTestRequest) returns (stream HelloTestResponse){}
+    rpc TestClientRecStream(TestClientRecStreamRequest) returns (stream TestClientRecStreamResponse){}
+    rpc TestClientSendStream(stream TestClientSendStreamRequest) returns (TestClientSendStreamResponse){}
+    rpc TestTwoWayStream(stream TestTwoWayStreamRequest) returns (stream TestTwoWayStreamResponse){}
+}
+
+message HelloReq {
+    string name = 1;
+    int32 age = 2;
+}
+message HelloReply{
+    string result = 1;
+}
+
+message HelloTestRequest{
+    string name = 1;
+    int64 age = 2;
+    repeated string data = 3;
+}
+
+message HelloTestResponse{
+}
+
+message TestClientRecStreamRequest{
+    string data = 1;
+}
+message TestClientRecStreamResponse{
+    string result = 1;
+}
+
+message TestClientSendStreamRequest{
+    string data = 1;
+}
+message TestClientSendStreamResponse{
+    string result = 1;
+}
+
+message TestTwoWayStreamRequest{
+    string data = 1;
+}
+message TestTwoWayStreamResponse{
+    string result = 1;
+}
+
+
+
+
+
+
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. arithmetic.proto
+// _pb2.py文件存储每个message对应的信息
+// _pb2_grpc.py文件存储每个服务的server与客户端以及注册server的工具
+// 客户端名为：service_name + Stub
+// 服务器名： service_name + Servicer
+// 注册服务为： add_服务端名_to_server

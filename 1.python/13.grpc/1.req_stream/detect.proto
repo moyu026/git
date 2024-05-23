@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package electrical_cabinet_detect;
+
+service Electrical_Cabinet_Detect {
+    rpc detection(stream DetectionReq) returns (DetectionResponse) {}
+}
+
+message DetectionReq {
+    string path = 1;
+    string name = 2;
+}
+
+message DetectionResponse {
+    string path = 1;
+    string name = 2;
+}

@@ -1,0 +1,5 @@
+1. train_mobilenet.py
+    line 58 : 数据集位置
+
+2.my_datast.py
+    line 52: json文件位置

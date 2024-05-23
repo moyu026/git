@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>模板语法</h1>
+<div>{{ name }}</div>
+<div>{{ roles }}</div>
+
+<div>{{ roles.0 }}</div>
+<div>{{ roles.1 }}</div>
+
+<div>
+    {% for role in roles %}
+        <span>{{ role }}</span>
+    {% endfor %}
+</div>
+<hr/>
+{{ info }}
+{{ info.name }}
+{{ info.age }}
+<ul>
+    {% for k,v in info.items %}
+    <li>{{ k }}:{{ v }}</li>
+    {% endfor %}
+</ul>
+
+<hr/>
+{{ data_list.0 }}
+{{ data_list.1 }}
+{{ data_list.1.name }}
+{{ data_list.1.age }}
+
+{% for item in data_list %}
+    <div>{{ item.name }} {{ item.age }}</div>
+{% endfor %}
+
+<hr/>
+
+{%  if name == 'admin' %}
+    <div>管理员</div>
+{% elif name == 'user' %}
+    <div>普通用户</div>
+{% else %}
+    <div>游客</div>
+{% endif %}
+
+</body>
+</html>

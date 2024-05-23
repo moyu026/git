@@ -1,0 +1,16 @@
+
+初始化："C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe" --initialize-insecure
+启动："C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe"
+制作服务："C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe" --install mysql0
+启动服务：net start mysql0
+关闭服务：net stop mysql0
+删除服务："C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe" --remove mysql0
+连接MySQL并发送指令："C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe" -h 127.0.0.1 -P 3306 -u root -p
+设置和修改密码：set password = password("112358")
+
+查看当前所有数据库：show databases;
+创建数据库：create database db00(名称) DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+删除数据库：drop database db00(名称);
+进入数据库：use db00;
+
+查看当前数据库下的表：show tables;

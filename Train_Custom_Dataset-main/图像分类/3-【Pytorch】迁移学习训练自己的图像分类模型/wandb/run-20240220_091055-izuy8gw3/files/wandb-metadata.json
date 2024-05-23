@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.8.16",
+    "heartbeatAt": "2024-02-20T01:10:58.262555",
+    "startedAt": "2024-02-20T01:10:55.617188",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "Train_Custom_Dataset-main/\u56fe\u50cf\u5206\u7c7b/3-\u3010Pytorch\u3011\u8fc1\u79fb\u5b66\u4e60\u8bad\u7ec3\u81ea\u5df1\u7684\u56fe\u50cf\u5206\u7c7b\u6a21\u578b/\u3010C2\u3011\u8fc1\u79fb\u5b66\u4e60\u5fae\u8c03\u8bad\u7ec3-\u8fdb\u9636\u7248.ipynb",
+    "codePathLocal": null,
+    "root": "F:/jupyter",
+    "git": {
+        "remote": "git@github.com:moyu026/study.git",
+        "commit": null
+    },
+    "email": "514352823@qq.com",
+    "host": "DESKTOP-93RB21U",
+    "username": "liu",
+    "executable": "E:\\ProgramData\\anaconda3\\envs\\opencv\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2500.0,
+        "min": 0.0,
+        "max": 2500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2500.0,
+            "min": 0.0,
+            "max": 2500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 878.9052696228027,
+            "used": 544.8046455383301
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2060",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.81448745727539
+    }
+}

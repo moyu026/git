@@ -1,0 +1,16 @@
+digraph Tree {
+node [shape=ellipse, style=filled, color="#dddddd"];
+leaf_1_0 [label="Class 0", shape=box]
+leaf_2_2 [label="Class 2", shape=box]
+leaf_3_1 [label="Class 1", shape=box]
+leaf_3_2 [label="Class 2", shape=box]
+node_2_0_7 [label="Feature 1 <= 7"]
+node_2_0_7 -> leaf_3_1 [label="True"]
+node_2_0_7 -> leaf_3_2 [label="False"]
+node_1_0_3 [label="Feature 1 <= 3"]
+node_1_0_3 -> leaf_2_2 [label="True"]
+node_1_0_3 -> node_2_0_7 [label="False"]
+node_0_1_3 [label="Feature 2 <= 3"]
+node_0_1_3 -> leaf_1_0 [label="True"]
+node_0_1_3 -> node_1_0_3 [label="False"]
+}
